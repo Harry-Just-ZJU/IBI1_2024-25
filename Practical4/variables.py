@@ -18,3 +18,15 @@ Y = False
 W = X and Y
 print(W)            #the answer is "False"
                     #W is False, because Y is False.
+
+#X | Y | X and Y
+#T | T | T
+#T | F | F
+#F | T | F
+#F | F | F
+
+#X | Y | X or Y
+#T | T | T
+#T | F | T
+#F | T | T
+#F | F | F

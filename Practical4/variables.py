@@ -3,7 +3,7 @@ a = 15              #walk to the bus stop
 b = 1 * 60 + 15     #take the bus directly to their office
 c = a + b           #total length of bus-based commute
 
-d = 1 * 60 + 30     #dive to the nearby car park
+d = 1 * 60 + 30     #drive to the nearby car park
 e = 5               #walk the final stage
 f = d + e           #total length of car-based commute
 if c > f:

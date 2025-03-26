@@ -2,7 +2,6 @@
 # import necessary libraries
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.cm import viridis
 
 # make array of all susceptible population (use the code in the Practical6 pdf)
 population = np.zeros((100, 100))
@@ -13,7 +12,7 @@ population[outbreak[0], outbreak[1]] = 1
 
 # draw figure (when outbreak begins)
 plt.figure(figsize = (6, 4), dpi = 150)
-plt.imshow(population, cmap = viridis, interpolation = 'nearest')
+plt.imshow(population, cmap = 'viridis', interpolation = 'nearest')
 plt.title('at times 0')
 plt.show()
 
@@ -60,6 +59,6 @@ for t in range(1, 101):
     # draw figure according to the guidance
     if t in [10, 50, 100]:
         plt.figure(figsize = (6, 4), dpi = 150)
-        plt.imshow(population, cmap = viridis, interpolation = 'nearest')
+        plt.imshow(population, cmap = 'viridis', interpolation = 'nearest')
         plt.title('at times ' + str(t))
         plt.show()

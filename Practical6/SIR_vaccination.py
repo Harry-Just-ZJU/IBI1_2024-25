@@ -43,7 +43,7 @@ colormap = cm.get_cmap('plasma', len(vaccination_percentage))
 
 plt.plot(infected_total[0], label='0', color = colormap(0))
 for i in range(1, 11):
-    plt.plot(infected_total[i], label = str(vaccination_percentage[i] * 100) + '%', color = colormap(i))
+    plt.plot(infected_total[i], label = str(int(vaccination_percentage[i] * 100)) + '%', color = colormap(i))
 
 plt.xlabel('time')
 plt.ylabel('number of people')

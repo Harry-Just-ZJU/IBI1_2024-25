@@ -57,7 +57,7 @@ for t in range(1, 101):
     # update
     population = new_population
 
-    # every ten times to show
+    # draw figure according to the guidance
     if t in [10, 50, 100]:
         plt.figure(figsize = (6, 4), dpi = 150)
         plt.imshow(population, cmap = viridis, interpolation = 'nearest')

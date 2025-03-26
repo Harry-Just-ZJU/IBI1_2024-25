@@ -39,9 +39,11 @@ for per in vaccination_percentage:
 # draw figure
 plt.figure(figsize = (6, 4), dpi = 150)
 
-plt.plot(infected_total[0], label='0')
+colormap = cm.get_cmap('Blues', len(vaccination_percentage))
+
+plt.plot(infected_total[10], label='0', color = colormap(0))
 for i in range(1, 11):
-    plt.plot(infected_total[i], label = str(vaccination_percentage[i] * 100) + '%')
+    plt.plot(infected_total[i], label = str(vaccination_percentage[i] * 100) + '%', color = colormap(11 - i))
 
 plt.xlabel('time')
 plt.ylabel('number of people')

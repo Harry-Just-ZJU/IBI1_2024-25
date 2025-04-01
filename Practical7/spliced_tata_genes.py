@@ -7,7 +7,7 @@ combination = input("please provide the combination: ")
 
 # set the input and output path
 input = 'Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa'
-output = f'{combination}._spliced_genes.fa'
+output = f'{combination}_spliced_genes.fa'
 
 # repeat the last problem
 genes = {}
@@ -33,6 +33,14 @@ tata_genes = {}
 for gene_name, sequence in genes.items():
     if re.search(r'TATA[AT]A[AT]', sequence):
         tata_genes[gene_name] = sequence
+    
+tata_num = {}
+for gene, sequence in tata_genes.items():
+    t = re.findall(r'TATA[AT]A[AT]', sequence)
+    tata_num[gene] = len(t)
+
+for gene, num in tata_num.items():
+    print(str(gene) + ': ' + str(num))        
 
 with open(output, 'w') as file:
     for gene_name, sequence in tata_genes.items():

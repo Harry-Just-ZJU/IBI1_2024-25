@@ -20,11 +20,13 @@ with open(input, 'r') as file:
         else:
             genes[gene_name[0]] += line
 
-for sequence in genes.values():
-    seqs = re.findall(r'combination[:2]\S+combination[2:]', sequence)
+# cut off
+for gene_name in genes:
+    cut = combination[:2] + r'.*' + combination[2:]
+    seqs = re.findall(cut, genes[gene_name])
     if seqs:
         for seq in seqs:
-            re.sub(seq, '', sequence)
+            genes[gene_name] = re.sub(seq, '', genes[gene_name])
 
 # repeat 
 tata_genes = {}
@@ -36,11 +38,3 @@ with open(output, 'w') as file:
     for gene_name, sequence in tata_genes.items():
         file.write('>' + gene_name + '\n')
         file.write(sequence + '\n')
-
-
-
-'''
-    Problem:
-    1: splice 是 greedy呢 还是non-greedy的
-    2: 
-'''

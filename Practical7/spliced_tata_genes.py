@@ -36,7 +36,8 @@ tata_genes = {}
 for gene_name, sequence in genes.items():
     if re.search(r'TATA[AT]A[AT]', sequence):
         tata_genes[gene_name] = sequence
-    
+
+# output the result
 with open(output, 'w') as file:
     for gene_name, sequence in tata_genes.items():
         t = re.findall(r'TATA[AT]A[AT]', sequence)

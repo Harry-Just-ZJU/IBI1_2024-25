@@ -20,13 +20,16 @@ with open(input, 'r') as file:
         else:
             genes[gene_name[0]] += line
 
-# cut off
+# find donor and accepter
+keys_to_delete = []
 for gene_name in genes:
     cut = combination[:2] + r'.*' + combination[2:]
-    seqs = re.findall(cut, genes[gene_name])
-    if seqs:
-        for seq in seqs:
-            genes[gene_name] = re.sub(seq, '', genes[gene_name])
+    seqs = re.search(cut, genes[gene_name])
+    if  not seqs:
+        keys_to_delete.append(gene_name)
+
+for key in keys_to_delete:
+    del genes[key]
 
 # repeat 
 tata_genes = {}
@@ -34,15 +37,8 @@ for gene_name, sequence in genes.items():
     if re.search(r'TATA[AT]A[AT]', sequence):
         tata_genes[gene_name] = sequence
     
-tata_num = {}
-for gene, sequence in tata_genes.items():
-    t = re.findall(r'TATA[AT]A[AT]', sequence)
-    tata_num[gene] = len(t)
-
-for gene, num in tata_num.items():
-    print(str(gene) + ': ' + str(num))        
-
 with open(output, 'w') as file:
     for gene_name, sequence in tata_genes.items():
-        file.write('>' + gene_name + '\n')
+        t = re.findall(r'TATA[AT]A[AT]', sequence)
+        file.write('>' + gene_name + ' :' + str(len(t)) + '\n')
         file.write(sequence + '\n')

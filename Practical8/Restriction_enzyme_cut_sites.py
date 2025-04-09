@@ -4,6 +4,10 @@
 import re 
 
 def find_restriction_site(DNA_seq, restriction_site):
+    '''
+    return positions within	the	DNA	sequence where	the	restriction	enzyme	cuts.	
+    and checks that both sequences contain only	canonical nucleotides and reports an error if this condition is	not	met.
+    '''
 
     site = []
     canonical = ['A', 'T', 'G', 'C']
@@ -16,11 +20,11 @@ def find_restriction_site(DNA_seq, restriction_site):
             return 'The restriction enzyme recognition sequence should contain only canonical nucleotides.'
         
     if re.search(restriction_site, DNA_seq):
-        for i in range(len(DNA_seq)):
-            seq = DNA_seq[i : i + len(restriction_site)]
+        for i in range(len(DNA_seq) - len(restriction_site) + 1):
 
-            if seq == restriction_site:
+            if DNA_seq[i : i + len(restriction_site)] == restriction_site:
                 site.append(f'position{ i + 1 }')
+                
         return 'Restriction sites are found at '+ ', '.join(site) + '.'
 
     else:

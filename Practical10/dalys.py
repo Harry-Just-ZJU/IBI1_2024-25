@@ -63,3 +63,8 @@ plt.ylabel('DALYs')
 plt.title('DALYS over time in the UK')
 plt.show()
 
+# TASK FOR QUESTION
+
+high_dalys_data = dalys_data[dalys_data['DALYs'] > 130000]
+
+print(high_dalys_data[['Entity', 'Year', 'DALYs']])

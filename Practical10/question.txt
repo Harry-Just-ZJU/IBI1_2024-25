@@ -1,0 +1,22 @@
+
+Question: What country or countries have recorded a DALYs greater than 130,000 in a single year?
+
+Line number: Line 66
+
+Result discussion: 
+    -Is it what you expected?
+        Yes, the result aligns with expectations. 
+                    Entity  Year      DALYs
+            1934  Eswatini  2004  131127.58
+            1935  Eswatini  2005  130755.59
+            2570     Haiti  2010  184708.16
+            4924    Rwanda  1994  693367.49
+    -Reasons for why the data might look the way it does:
+    1. Eswatini (2004–2005)
+    Key: HIV/AIDS epidemic.
+    Factors: Poverty, limited healthcare resources, and high tuberculosis (TB) co-infection rates.
+    2. Haiti (2010)
+    Key: 2010 earthquake.
+    Factors: Long-standing poverty and political instability pre-2010 worsened the health impact.
+    3. Rwanda (1994)
+    Key: The 1994 Rwandan Genocide.

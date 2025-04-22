@@ -1,5 +1,5 @@
 # What does this piece of code do?
-# Answer: to stimulate rolling two six-sided dice at the same time repeatedly, and output how many time it needs to roll the same number.
+# Answer: to stimulate generate two numbers randomly from 1 to 6 at the same time repeatedly, and output how many time it needs to get the same number.
 
 # Import libraries
 # randint allows drawing a random number,

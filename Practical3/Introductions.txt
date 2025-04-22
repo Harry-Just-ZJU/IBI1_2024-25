@@ -1,4 +1,4 @@
-Hello, my name is Harry.
+Hello, my name is Harry from BMI2401.
 I like drinking coffee.
 I am enjoying learning IBI1.
 I am happy that I can push my repo from Visual Studio Code to GitHub.

@@ -3,4 +3,4 @@ In the class, I met many challenges like how to change the theme of my own websi
 But after collaboration with my classmates and Rob's guidance, I have already overcome the challenges.
 I feel a sense of accomplishment because I master a new skill!
 I will keep working hard to be a good bioinformatics worker! 
-The commit message is not informative, so I change it.
+The commit message is not very informative, so I change it.

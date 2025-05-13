@@ -1,0 +1,33 @@
+• The length and subcellular localisation of the human SOD2 protein.	
+
+length = 222
+subcellular localisation: Mitochondrion matrix
+
+• The range of percent age identities in the reported online BLAST results.	
+
+58.1% - 100%
+
+• The alignment score and percentage of identical amino	acids for each of the three	comparisons	
+that you performed using Python.
+
+P04179 vs P09671:
+Score: 1097.0
+Identity: 90.09%
+
+P04179 vs random:
+Score: -234.0
+Identity: 4.95%
+
+P09671 vs random:
+Score: -230.0
+Identity: 5.41%
+
+• A	statement recording	which of these two sequences are most closely related.
+
+Among these sequences, P04179 and P09671 are the most closely related. 
+This is because the alignment score between P04179 and P09671 is 1097.0 with an identity percentage of 90.09%, 
+which is significantly higher than the scores and identities between either P04179 or P09671 and the random sequence. 
+The scores for the comparisons with the random sequence are -234.0 and -230.0, 
+and the identity percentages are 4.95% and 5.41% respectively. 
+Higher alignment scores and identity percentages indicate a greater similarity in amino acid composition, 
+suggesting a closer relationship between P04179 and P09671.

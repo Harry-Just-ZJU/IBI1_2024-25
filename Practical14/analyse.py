@@ -24,22 +24,17 @@ def analyze_with_dom(filename):
     for term in terms:
 
         namespace_elem = term.getElementsByTagName('namespace')
-        if not namespace_elem or not namespace_elem[0].childNodes:
-            continue
         namespace = namespace_elem[0].childNodes[0].data.strip()
-        
-        if namespace not in namespace_stats:
-            continue
 
-        id_elem = term.getElementsByTagName('id')
-        term_id = id_elem[0].childNodes[0].data.strip() if id_elem and id_elem[0].childNodes else "Unknown"
+        name_elem = term.getElementsByTagName('name')
+        term_name = name_elem[0].childNodes[0].data.strip() if name_elem and name_elem[0].childNodes else "Unknown"
         
         is_a_elements = term.getElementsByTagName('is_a')
         count = len(is_a_elements)
 
         if count > namespace_stats[namespace]['count']:
             namespace_stats[namespace]['count'] = count
-            namespace_stats[namespace]['max_term'] = term_id
+            namespace_stats[namespace]['max_term'] = term_name
     
     end_time = datetime.now()
     time_taken = (end_time - start_time).total_seconds()
@@ -51,7 +46,7 @@ class GOTermHandler(xml.sax.ContentHandler):
     def __init__(self):
         self.current_tag = ""
         self.current_namespace = ""
-        self.current_id = ""
+        self.current_name = ""
         self.is_a_count = 0
         
         self.namespace_stats = {
@@ -64,14 +59,14 @@ class GOTermHandler(xml.sax.ContentHandler):
         self.current_tag = tag
         if tag == 'term':
             self.current_namespace = ""
-            self.current_id = ""
+            self.current_name = ""
             self.is_a_count = 0
     
     def characters(self, content):
         if self.current_tag == 'namespace':
             self.current_namespace += content.strip()
-        elif self.current_tag == 'id':
-            self.current_id += content.strip()
+        elif self.current_tag == 'name':
+            self.current_name += content.strip()
     
     def endElement(self, tag):
         if tag == 'is_a':
@@ -80,7 +75,7 @@ class GOTermHandler(xml.sax.ContentHandler):
 
             if self.is_a_count > self.namespace_stats[self.current_namespace]['count']:
                 self.namespace_stats[self.current_namespace]['count'] = self.is_a_count
-                self.namespace_stats[self.current_namespace]['max_term'] = self.current_id
+                self.namespace_stats[self.current_namespace]['max_term'] = self.current_name
         self.current_tag = ""
 
 def analyze_with_sax(filename):

@@ -6,8 +6,8 @@ import re
 combination = input("please provide the combination: ")
 
 # set the input and output path
-input = 'Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa'
-output = f'{combination}_spliced_genes.fa'
+input = 'Practical7/Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa'
+output = f'Practical7/{combination}_spliced_genes.fa'
 
 # repeat the last problem
 genes = {}

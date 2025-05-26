@@ -3,8 +3,8 @@
 import re
 
 # set input and output path
-input = 'Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa'
-output = 'tata_genes.fa'
+input = 'Practical7/Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa'
+output = 'Practical7/tata_genes.fa'
 
 # set the variables
 genes = {}

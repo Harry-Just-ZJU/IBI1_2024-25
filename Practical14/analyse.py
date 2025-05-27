@@ -97,7 +97,6 @@ def analyze_with_sax(filename):
 
 def print_results(dom_stats, sax_stats, dom_time, sax_time):
 
-    print("=" * 50)
     print("DOM:")
     for namespace, stats in dom_stats.items():
         print(f"Namespace: {namespace}")
@@ -105,7 +104,6 @@ def print_results(dom_stats, sax_stats, dom_time, sax_time):
         print(f"  counts: {stats['count']}")
     print(f"Time cost: {dom_time:.6f}s")
     
-    print("\n" + "=" * 50)
     print("SAX:")
     for namespace, stats in sax_stats.items():
         print(f"Namespace: {namespace}")
@@ -113,7 +111,6 @@ def print_results(dom_stats, sax_stats, dom_time, sax_time):
         print(f"  counts: {stats['count']}")
     print(f"Time cost: {sax_time:.6f}s")
     
-    print("\n" + "=" * 50)
     if dom_time < sax_time:
         print("DOM is faster!")
     elif sax_time < dom_time:
